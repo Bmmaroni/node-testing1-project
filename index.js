@@ -8,8 +8,12 @@
  */
 function trimProperties(obj) {
   // ✨ implement
-  const newObj = Object.keys(i => obj[i] = obj[i].trim())
-  return newObj
+	const copy = JSON.parse(JSON.stringify(obj))
+	for(const key in copy){
+		copy[key] = copy[key].trim()
+	}
+	console.log(copy)
+	return copy
 }
 
 /**
@@ -22,6 +26,11 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+	for(const key in obj){
+		obj[key] = obj[key].trim();
+	}
+	console.log(obj)
+	return obj
 }
 
 /**

@@ -8,14 +8,22 @@ describe('[Exercise 1] trimProperties', () => {
     const actual = utils.trimProperties(input)
     expect(actual).toEqual(expected)
   })
-  it('[2] returns a copy, leaving the original object intact', () => {
+  it.only('[2] returns a copy, leaving the original object intact', () => {
     // ✨ test away
+	const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+	const expected = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+	const actual = utils.trimProperties(input)
+	expect(actual).not.toMatchObject(expected)
   })
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
   it('[3] returns an object with the properties trimmed', () => {
     // ✨ test away
+	const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    const actual = utils.trimPropertiesMutation(input)
+    expect(actual).toEqual(expected)
   })
   it('[4] the object returned is the exact same one we passed in', () => {
     // ✨ test away

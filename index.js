@@ -27,7 +27,7 @@ function trimProperties(obj) {
 function trimPropertiesMutation(obj) {
   // ✨ implement
 	for(const key in obj){
-		obj[key] = obj[key].trim();
+		obj[key] = obj[key].trim()
 	}
 	console.log(obj)
 	return obj

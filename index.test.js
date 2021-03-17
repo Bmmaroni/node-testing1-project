@@ -10,10 +10,9 @@ describe('[Exercise 1] trimProperties', () => {
   })
   it.only('[2] returns a copy, leaving the original object intact', () => {
     // ✨ test away
-	const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
-	const expected = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
-	const actual = utils.trimProperties(input)
-	expect(actual).not.toMatchObject(expected)
+	const original = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+	const copy = utils.trimProperties(original)
+	expect(original).not.toEqual(copy)
   })
 })
 
@@ -27,6 +26,9 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
   })
   it('[4] the object returned is the exact same one we passed in', () => {
     // ✨ test away
+	const original = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const copy = utils.trimPropertiesMutation(original)
+	expect(original).toEqual(copy)
   })
 })
 

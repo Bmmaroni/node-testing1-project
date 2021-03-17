@@ -12,7 +12,6 @@ function trimProperties(obj) {
 	for(const key in copy){
 		copy[key] = copy[key].trim()
 	}
-	console.log(copy)
 	return copy
 }
 
@@ -29,7 +28,6 @@ function trimPropertiesMutation(obj) {
 	for(const key in obj){
 		obj[key] = obj[key].trim()
 	}
-	console.log(obj)
 	return obj
 }
 
@@ -43,6 +41,9 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+	const number = Math.max.apply(null, integers)
+	console.log(number)
+	return number
 }
 
 class Counter {

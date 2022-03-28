@@ -8,6 +8,11 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+	const copy = JSON.parse(JSON.stringify(obj))
+	for(const key in copy){
+		copy[key] = copy[key].trim()
+	}
+	return copy
 }
 
 /**
@@ -20,6 +25,10 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+	for(const key in obj){
+		obj[key] = obj[key].trim()
+	}
+	return obj
 }
 
 /**
@@ -32,6 +41,9 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+	const number = Math.max.apply(null, integers)
+	console.log(number)
+	return number
 }
 
 class Counter {
@@ -41,6 +53,8 @@ class Counter {
    */
   constructor(initialNumber) {
     // ✨ initialize whatever properties are needed
+	this.initialNumber = initialNumber
+	this.first = true
   }
 
   /**
@@ -57,6 +71,12 @@ class Counter {
    */
   countDown() {
     // ✨ implement
+	if (this.first) {
+		return this.initialNumber
+	} else if (!this.first && this.initialNumber > 0) {
+		return this.initialNumber -= 1
+	} 
+	return this.initialNumber = 0
   }
 }
 

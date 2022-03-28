@@ -10,21 +10,35 @@ describe('[Exercise 1] trimProperties', () => {
   })
   it('[2] returns a copy, leaving the original object intact', () => {
     // ✨ test away
+	const original = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+	const copy = utils.trimProperties(original)
+	expect(original).not.toEqual(copy)
   })
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
   it('[3] returns an object with the properties trimmed', () => {
     // ✨ test away
+	const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    const actual = utils.trimPropertiesMutation(input)
+    expect(actual).toEqual(expected)
   })
   it('[4] the object returned is the exact same one we passed in', () => {
     // ✨ test away
+	const original = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const copy = utils.trimPropertiesMutation(original)
+	expect(original).toEqual(copy)
   })
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  it('[5] returns the largest number in an array of numbers', () => {
+  it.only('[5] returns the largest number in an array of numbers', () => {
     // ✨ test away
+	const input = [2, 5, 2, 6]
+	const expected = 6
+	const actual = utils.findLargestInteger(input)
+	expect(actual).toEqual(expected)
   })
 })
 
@@ -35,6 +49,7 @@ describe('[Exercise 4] Counter', () => {
   })
   it('[6] the FIRST CALL of counter.countDown returns the initial count', () => {
     // ✨ test away
+	
   })
   it('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {
     // ✨ test away
